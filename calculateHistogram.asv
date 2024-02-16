@@ -1,0 +1,7 @@
+function hist = calculateHistogram(image, roi)
+    % Apply the ROI to the image
+    maskedImage = bsxfun(@times, image, cast(roi, class(image)));
+
+    % Calculate histogram for the masked image
+    hist = imhist(maskedImage);
+end
